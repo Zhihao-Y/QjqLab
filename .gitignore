@@ -1,0 +1,13 @@
+.next
+node_modules
+out
+dist
+.env*
+*.log
+.DS_Store
+# Local incoming source folder; curated copy lives in materials/raw/
+new_materials/
+
+# Source material archive. Keep locally, but do not publish raw Word/text exports.
+materials/raw/
+materials/extracted/
