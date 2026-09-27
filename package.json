@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "next build && node scripts/fix-static-export.mjs",
+    "build": "next build --webpack && node scripts/fix-static-export.mjs",
     "start": "next start",
     "lint": "eslint .",
-    "build:github": "GITHUB_PAGES=true NEXT_PUBLIC_BASE_PATH=/QjqLab next build && node scripts/fix-static-export.mjs",
+    "build:github": "GITHUB_PAGES=true NEXT_PUBLIC_BASE_PATH=/QjqLab next build --webpack && node scripts/fix-static-export.mjs",
     "preview:static": "node scripts/preview-static.mjs"
   },
   "dependencies": {

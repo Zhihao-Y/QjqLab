@@ -1,82 +1,42 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 import { assetPath } from "../lib/assetPath";
 import { Locale, site } from "../data/siteContent";
-
-type LanguageFrameProps = {
-  active: "home" | "research" | "professor" | "team" | "publications" | "gallery" | "contact";
+const navItems = [
+  { key: "home", href: "/" }, { key: "research", href: "/research/" },
+  { key: "professor", href: "/professor/" }, { key: "team", href: "/team/" },
+  { key: "publications", href: "/publications/" }, { key: "gallery", href: "/gallery/" },
+  { key: "contact", href: "/contact/" },
+] as const;
+type Props = {
+  active: typeof navItems[number]["key"];
   locale: Locale;
   onLocaleChange: (locale: Locale) => void;
   children: React.ReactNode;
 };
-
-const navItems = [
-  { key: "home", href: "/" },
-  { key: "research", href: "/research" },
-  { key: "professor", href: "/professor" },
-  { key: "team", href: "/team" },
-  { key: "publications", href: "/publications" },
-  { key: "gallery", href: "/gallery" },
-  { key: "contact", href: "/contact" },
-] as const;
-
-export function LanguageFrame({
-  active,
-  locale,
-  onLocaleChange,
-  children,
-}: LanguageFrameProps) {
-  const copy = site[locale] ?? site.zh;
-  const nextLocale: Locale = locale === "zh" ? "en" : "zh";
-
+export function LanguageFrame({ active, locale, onLocaleChange, children }: Props) {
+  const copy = site[locale];
+  useEffect(() => { document.documentElement.lang = locale === "zh" ? "zh-CN" : "en"; }, [locale]);
   return (
-    <main className="min-h-screen bg-paper-1 text-ink-1">
-      <header className="border-b border-accent-2 bg-paper-1">
-        <div className="mx-auto flex w-full max-w-7xl flex-col gap-5 px-6 py-4 sm:px-10 lg:flex-row lg:items-center lg:justify-between lg:px-14">
-          <Link href="/" className="flex items-center gap-4">
-            <Image
-              src={assetPath("/运动营养与健康实验室logo.png")}
-              alt="运动营养与健康实验室 logo"
-              width={64}
-              height={64}
-              className="h-16 w-16 rounded-full object-contain"
-              priority
-            />
-            <span className="text-lg font-bold tracking-normal text-ink-1">
-              {copy.shortName}
-            </span>
+    <div className="site-shell">
+      <div className="site-backdrop" style={{ backgroundImage: `url('${assetPath("/home/beijing-sport-university.jpg")}')` }} aria-hidden="true" />
+      <a className="skip-link" href="#content">{locale === "zh" ? "跳转到正文" : "Skip to content"}</a>
+      <header className="site-header">
+        <div className="header-inner">
+          <Link href={`/?lang=${locale}`} className="brand">
+            <Image src={assetPath("/brand/lab-logo.jpg")} alt="" width={60} height={60} priority />
+            <span>{locale === "zh" ? copy.shortName : <>Sports Nutrition<br />&amp; Health Laboratory</>}</span>
           </Link>
-
-          <div className="flex flex-wrap items-center gap-4 sm:gap-7">
-            <nav className="flex flex-wrap items-center gap-4 text-base font-light text-ink-2 sm:gap-7">
-              {navItems.map((item) => (
-                <Link
-                  key={item.key}
-                  href={item.href}
-                  className={
-                    active === item.key
-                      ? "text-ink-1 underline decoration-primary-2 decoration-1 underline-offset-8"
-                      : "transition hover:text-primary-1"
-                  }
-                >
-                  {copy[item.key]}
-                </Link>
-              ))}
-            </nav>
-            <button
-              type="button"
-              onClick={() => onLocaleChange(nextLocale)}
-              className="border border-primary-2 bg-primary-2 px-4 py-2 text-sm font-bold text-paper-1 transition hover:border-primary-1 hover:bg-primary-1 focus:outline-none focus:ring-2 focus:ring-primary-2/30"
-              aria-label={copy.switchLabel}
-            >
-              {copy.language}
-            </button>
-          </div>
+          <nav className="site-nav" aria-label={locale === "zh" ? "主导航" : "Main navigation"}>
+            {navItems.map(item => <Link key={item.key} href={`${item.href}?lang=${locale}`} aria-current={active === item.key ? "page" : undefined}>{copy[item.key]}</Link>)}
+          </nav>
+          <button className="language-toggle" type="button" onClick={() => onLocaleChange(locale === "zh" ? "en" : "zh")} aria-label={copy.switchLabel}>{locale === "zh" ? "EN" : "中文"}</button>
         </div>
       </header>
-      {children}
-    </main>
+      <main id="content">{children}</main>
+      <footer className="site-footer"><div className="footer-inner"><span>{copy.shortName}</span><span>{locale === "zh" ? "北京体育大学" : "Beijing Sport University"}</span><Link href={`/contact/?lang=${locale}`}>{copy.contact}</Link></div></footer>
+    </div>
   );
 }

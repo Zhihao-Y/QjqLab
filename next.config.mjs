@@ -4,6 +4,7 @@ const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1] || "QjqLab";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? (isGithubPages ? `/${repoName}` : "");
 
 const nextConfig = {
+  distDir: process.env.NEXT_OUTPUT_DIR || ".next",
   output: "export",
   trailingSlash: true,
   images: {

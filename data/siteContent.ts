@@ -36,11 +36,11 @@ export const site = {
     shortName: "Sports Nutrition and Health Lab",
     eyebrow: "运动营养与健康实验室",
     positioning:
-      "A research team built on the Beijing Higher Institution Engineering Research Center for Sports Nutrition and the Exercise Biochemistry Teaching and Research Section at Beijing Sport University.",
+      "Professor Junqiang Qiu's group is based at the Beijing Higher Institution Engineering Research Center for Sports Nutrition and the Exercise Biochemistry Teaching and Research Section of Beijing Sport University. We are an innovative team combining in-depth research with practical application. Guided by exercise for health, we pursue sustained research in sports nutrition and health. Our team comprises more than twenty faculty members, technical staff, and master's and doctoral students. We have undertaken projects under the National Key R&D Program, Olympic science and technology initiatives, and industry collaborations. Alongside sports nutrition and physiological monitoring services for China's national race walking, speed skating and trampoline teams, we develop precision weight-management approaches and personalized exercise and nutrition programs for people with overweight, obesity and chronic conditions.",
     addressLabel: "Address",
     address: "Room 208, Teaching and Laboratory Building, School of Sport Science, Beijing Sport University, No. 48 Xinxi Road, Haidian District, Beijing 100084, China.",
     intro:
-      "The team focuses on exercise for health, with the core purpose of doing useful and interesting research. Its work spans sports nutrition and health, national-team service, precision weight management, personalized sports nutrition programs, wearable physiological monitoring, energy balance, sweat metabolism, and translational health solutions.",
+      "We are committed to research that is useful and engaging.",
     cta: "If you care about sports science, sports nutrition, and health, you are welcome to join us or collaborate with us.",
   },
 } as const;
@@ -191,7 +191,7 @@ export const researchAreas = {
   zh: [
     {
       title: "运动营养与大众健康",
-      kicker: "Public Health",
+      kicker: "Sports Nutrition and Public Health",
       text: "围绕“健康中国”和“全民健身”国家战略，聚焦身体活动促进健康的科学问题，开展身体活动精准量化、个性化运动处方、运动营养干预、体重管理及慢病防控等研究，构建适用于中国人群的身体活动评价体系、运动营养评价体系和健康促进策略，为身体活动指南、膳食营养指导及健康管理实践提供科学依据。",
       problems: "适合解决：大众健康促进、体重管理、慢病风险管理、身体活动能耗评估、个性化运动处方制定、营养教育与健康行为干预。",
       papers: [
@@ -202,7 +202,7 @@ export const researchAreas = {
     },
     {
       title: "运动营养与运动表现",
-      kicker: "Performance",
+      kicker: "Sports Nutrition and Performance",
       text: "面向竞技体育重大需求，以提高运动表现和保障运动员健康为目标，围绕运动员能量代谢、机能监控、补液策略、运动补剂、恢复优化及低能量可利用性等开展基础与应用研究，为国家队科技保障、重大赛事备战及竞技能力提升提供科学支撑。",
       problems: "适合解决：运动员机能评定与营养管理、训练和比赛营养策略、低能量可利用性风险评估、耐力运动表现优化和恢复策略制定。",
       papers: [
@@ -212,8 +212,8 @@ export const researchAreas = {
       ],
     },
     {
-      title: "运动营养关键技术与成果转化",
-      kicker: "Translation",
+      title: "运动营养品研发",
+      kicker: "Sports Nutrition Product Development",
       text: "聚焦运动营养关键技术研发与产业应用，建立运动营养产品功效评价体系，开展运动营养产品研发、人体功效验证、可穿戴设备功能与算法验证、标准制定、知识产权布局、专业培训与科普传播，推动科研成果从实验室走向运动场景、健康管理场景和产业应用场景，服务运动健康产业高质量发展。",
       problems: "适合解决：运动营养产品功效研究、可穿戴设备功能验证、运动健康算法优化、标准与专利、企业联合研发、专业培训、运动健康科普和营养教育工具开发。",
       papers: [
@@ -226,23 +226,23 @@ export const researchAreas = {
   en: [
     {
       title: "Sports Nutrition and Public Health",
-      kicker: "Public Health",
-      text: "Research on precise physical activity quantification, personalized exercise prescriptions, mechanisms of exercise for health, and activity and dietary guidelines.",
-      problems: "For: health promotion, chronic disease risk management, energy expenditure assessment, and exercise prescription.",
+      kicker: "Sports Nutrition and Public Health",
+      text: "Aligned with the Healthy China and Fitness for All national strategies, we investigate how physical activity promotes health. Our work spans precise physical activity measurement, personalized exercise prescriptions, sports nutrition interventions, weight management and chronic disease prevention. We develop physical activity and sports nutrition assessment systems and health-promotion strategies appropriate for Chinese populations, providing evidence for physical activity guidelines, dietary guidance and health-management practice.",
+      problems: "Applications: public health promotion, weight management, chronic disease risk management, physical activity energy-expenditure assessment, personalized exercise prescriptions, nutrition education and health-behavior interventions.",
       papers: ["Reference values for energy expenditure in Chinese adults", "Evidence-based exercise prescription guidelines"],
     },
     {
       title: "Sports Nutrition and Performance",
-      kicker: "Performance",
-      text: "Functional assessment, nutrition intervention, hydration strategies, low energy availability, and performance optimization for athletes.",
-      problems: "For: training monitoring, nutrition support, overtraining warning, and major competition preparation.",
+      kicker: "Sports Nutrition and Performance",
+      text: "Responding to the needs of competitive sport, we conduct fundamental and applied research to improve performance and protect athlete health. Our work addresses energy metabolism, physiological monitoring, hydration strategies, supplements, recovery and low energy availability, providing scientific support for national teams, major competitions and athletic development.",
+      problems: "Applications: physiological assessment and nutritional management of athletes, training and competition nutrition, low energy availability risk assessment, endurance performance and recovery strategies.",
       papers: ["Low energy availability in Chinese athletes", "LEA screening and intervention for aesthetic sports"],
     },
     {
       title: "Sports Nutrition Product Development",
-      kicker: "Translation",
-      text: "Efficacy testing, product development, wearable algorithm optimization, standards, patents, and industry collaboration.",
-      problems: "For: sports food R&D, human efficacy evaluation, and wearable energy-expenditure models.",
+      kicker: "Sports Nutrition Product Development",
+      text: "We develop key sports nutrition technologies and translate them into industrial applications. Our work includes efficacy assessment systems, product development, human efficacy trials, validation of wearable functions and algorithms, standards, intellectual property, professional training and science communication. We bring research into sport, health management and industry to support high-quality development of the sports and health sector.",
+      problems: "Applications: sports nutrition product efficacy, wearable validation, sports and health algorithms, standards and patents, joint industry R&D, professional training, science communication and nutrition education tools.",
       papers: ["BCAA and skeletal muscle recovery", "Sweat characteristics and hydration strategies"],
     },
   ],
@@ -609,7 +609,7 @@ export const ponyMembers = {
       interest: "Precision exercise prescription, exercise metabolism, wearable algorithm development",
       graduation: "PhD graduation: June 2025",
       intro:
-        "He is currently a postdoctoral fellow in sports medicine, focusing on exercise metabolism, precision exercise prescription, and wearable-device algorithm development.",
+        "Seek truth from facts.",
       photo: "/students/yang-junchao.png",
       photoNote: "Daily-life photo",
     },
