@@ -33,7 +33,7 @@ jobs:
       - name: Build static site
         env:
           GITHUB_PAGES: "true"
-          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+          NEXT_PUBLIC_BASE_PATH: ""
         run: npm run build
 
       - name: Upload Pages artifact
